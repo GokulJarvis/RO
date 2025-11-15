@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Siddharth Siddha Medicine — Official</title>
+  <meta name="description" content="Siddharth Siddha Medicine — Traditional Siddha healthcare, treatments, herbal products and consultations." />
+
+  <!-- Simple reset + fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#0f665c;
+      --accent:#e6f4f2;
+      --muted:#6b6b6b;
+      --card:#ffffff;
+      --glass: rgba(255,255,255,0.7);
+      --shadow: 0 6px 20px rgba(16,24,40,0.08);
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#122;line-height:1.5}
+    body{background:linear-gradient(180deg,#f7fffd 0%, #ffffff 100%);-webkit-font-smoothing:antialiased;padding-bottom:60px}
+
+    header{background:var(--brand);color:white;padding:18px 24px;position:sticky;top:0;z-index:50;box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+    .wrap{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo .mark{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#ffffff22,#ffffff11);display:flex;align-items:center;justify-content:center;font-weight:700;color:white;border:2px solid rgba(255,255,255,0.08)}
+    nav{display:flex;gap:14px;align-items:center}
+    nav a{color:white;text-decoration:none;font-weight:600;padding:6px 10px;border-radius:8px;opacity:0.95}
+    nav a:hover{background:rgba(255,255,255,0.08)}
+    .cta{background:white;color:var(--brand);padding:8px 12px;border-radius:8px;font-weight:700;text-decoration:none}
+    .hero{max-width:1100px;margin:28px auto 18px;padding:28px;border-radius:18px;background:linear-gradient(90deg,var(--accent),#ffffff);box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 380px;gap:22px}
+    .hero-left h1{margin:0;font-size:32px;color:var(--brand)}
+    .lead{color:var(--muted);margin-top:8px}
+    .features{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .feature{background:rgba(15,102,92,0.06);padding:10px 12px;border-radius:10px;font-weight:600;font-size:14px;color:var(--brand)}
+
+    /* Cards and sections */
+    section{max-width:1100px;margin:22px auto;padding:0 18px}
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:var(--shadow)}
+    .treat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:14px}
+    .treat{padding:14px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfffb);border:1px solid #f0f7f4}
+    .treat h3{margin:6px 0 4px;color:var(--brand)}
+    .treat p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Products */
+    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
+    .product{background:var(--card);padding:12px;border-radius:10px;border:1px solid #f2f7f6}
+    .product img{width:100%;height:130px;object-fit:cover;border-radius:8px}
+    .product h4{margin:8px 0 6px}
+    .price{font-weight:700;color:var(--brand)}
+
+    /* Testimonials */
+    .testi{display:flex;gap:12px;overflow:auto;padding-bottom:8px}
+    .testi-card{min-width:260px;background:#fff;padding:12px;border-radius:12px;border:1px solid #f1f4f3}
+
+    /* Contact / Form */
+    form{display:grid;gap:10px}
+    label{font-size:13px;color:var(--muted)}
+    input[type=text], input[type=email], input[type=tel], textarea, select{padding:10px;border-radius:8px;border:1px solid #e6eeeb;font-size:15px}
+    button.primary{background:var(--brand);color:white;padding:10px 14px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
+
+    footer{max-width:1100px;margin:26px auto;padding:18px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .social a{text-decoration:none;margin-right:8px;color:var(--brand);font-weight:700}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr; padding:18px}
+      nav{display:none}
+      header .wrap{justify-content:space-between}
+    }
+
+    /* small niceties */
+    .pill{display:inline-block;background:#fff;padding:6px 10px;border-radius:999px;border:1px solid #eef7f6;color:var(--brand);font-weight:700}
+    .muted{color:var(--muted);font-size:14px}
+    .small{font-size:13px;color:var(--muted)}
+    .thumb{width:36px;height:36px;border-radius:8px;object-fit:cover}
+    .inline-grid{display:flex;gap:10px;align-items:center}
+    .center{display:flex;align-items:center;justify-content:center}
+    .spaced{display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .notice{background:#fff9ec;padding:10px;border-radius:10px;border:1px solid #fff1d6;color:#8a5b00}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <div class="logo">
+        <div class="mark">S</div>
+        <div>
+          <div style="font-weight:700">Siddharth Siddha Medicine</div>
+          <div class="small">Traditional Siddha care • Herbal Products • Consultations</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#treatments">Treatments</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="cta" href="#appointment">Book</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home" class="hero" role="main" aria-labelledby="hero-title">
+    <div class="hero-left">
+      <h1 id="hero-title">Authentic Siddha Healing — Natural, Time-tested</h1>
+      <p class="lead">Siddharth Siddha Medicine combines classical Siddha therapies and herbal formulations to restore balance and vitality. Consultation, therapies, and genuine herbal products delivered with care.</p>
+
+      <div class="features" aria-hidden="false">
+        <div class="feature">Expert Practitioners</div>
+        <div class="feature">Herbal Medicines</div>
+        <div class="feature">Personalised Plans</div>
+        <div class="feature">Consultation & Therapy</div>
+      </div>
+
+      <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="primary-btn" id="btn-consult" href="#contact" style="text-decoration:none">
+          <button class="primary" style="background:var(--brand);color:white;padding:10px 14px;border-radius:10px;border:none;font-weight:700;cursor:pointer">Free Consultation</button>
+        </a>
+        <a class="small" href="#products">Shop Herbal Products →</a>
+      </div>
+
+      <div style="margin-top:16px" class="notice">
+        COVID-19 Update: Appointments available. We follow hygiene & sanitization protocols.
+      </div>
+    </div>
+
+    <aside class="card" aria-label="Quick appointment">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <div style="font-weight:700;color:var(--brand)">Book Appointment</div>
+          <div class="small muted">Consult with our Siddha physician</div>
+        </div>
+        <img src="https://dummyimage.com/80x80/0f665c/ffffff&text=S" alt="" style="border-radius:10px" />
+      </div>
+
+      <form id="quickForm" style="margin-top:12px" onsubmit="submitAppointment(event)">
+        <label for="qname">Name</label>
+        <input id="qname" required type="text" placeholder="Your name" />
+
+        <label for="qphone">Phone</label>
+        <input id="qphone" required type="tel" placeholder="10-digit phone" />
+
+        <label for="qdate">Preferred Date</label>
+        <input id="qdate" type="date" required />
+
+        <button class="primary" style="width:100%;margin-top:8px">Request Appointment</button>
+      </form>
+
+      <div class="small muted" style="margin-top:10px">You will receive a confirmation call/SMS within 24 hours.</div>
+    </aside>
+  </main>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="card">
+      <div style="display:flex;gap:18px;align-items:center">
+        <img src="https://dummyimage.com/120x120/effaf7/0f665c&text=Dr" alt="Doctor" style="border-radius:12px;object-fit:cover" />
+        <div>
+          <h2 style="margin:0;color:var(--brand)">About Siddharth Siddha Medicine</h2>
+          <p class="muted" style="max-width:780px;margin-top:8px">
+            Founded by experienced Siddha practitioners, we specialise in holistic treatment plans using classical Siddha methods, herbal decoctions, therapeutic massages and dietary guidance. Our approach is personalized — focusing on root cause and long-term wellbeing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TREATMENTS -->
+  <section id="treatments">
+    <h2 style="margin:0 18px 10px;color:var(--brand)">Treatments & Therapies</h2>
+    <div class="card">
+      <div class="treat-grid">
+        <div class="treat">
+          <h3>Siddha Internal Medicine (Kayakarpam)</h3>
+          <p>Herbal decoctions and classical formulations tailored to the patient's prakriti and imbalance.</p>
+        </div>
+        <div class="treat">
+          <h3>External Therapies (Thokkanam)</h3>
+          <p>Therapeutic oil massages and medicated poultices to relieve musculoskeletal problems and stress.</p>
+        </div>
+        <div class="treat">
+          <h3>Varmam & Bone Care</h3>
+          <p>Traditional manipulative techniques and supportive therapies for joint & bone health.</p>
+        </div>
+        <div class="treat">
+          <h3>Detoxification Program</h3>
+          <p>Short-term fasting, herbal cleanses and diet plans under physician supervision.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products">
+    <h2 style="margin:0 18px 10px;color:var(--brand)">Herbal Products</h2>
+    <div class="card">
+      <div class="products" id="productList">
+        <!-- products will be injected by JS; sample shown for fallback -->
+        <div class="product">
+          <img src="https://dummyimage.com/400x300/fff8f0/0f665c&text=Herb+A" alt="Herb A">
+          <h4>Chyavanapriya Syrup</h4>
+          <div class="small muted">Immunity tonic — 200ml</div>
+          <div style="margin-top:8px" class="spaced">
+            <div class="price">₹150</div>
+            <button onclick="addToCart(0)" class="primary small">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:14px" class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div style="font-weight:700">Cart</div>
+          <div class="small muted">Items: <span id="cartCount">0</span></div>
+        </div>
+        <div id="cartItems" style="margin-top:10px" class="small muted">No items yet.</div>
+
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <button class="primary" onclick="checkout()" style="flex:1">Checkout</button>
+          <button onclick="clearCart()" style="flex:1;background:#f3f6f5;border-radius:10px;border:1px solid #eef7f3;padding:10px">Clear</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <h2 style="margin:0 18px 10px;color:var(--brand)">What Patients Say</h2>
+    <div class="card">
+      <div class="testi" aria-live="polite">
+        <div class="testi-card">
+          <div style="display:flex;gap:8px;align-items:center">
+            <img class="thumb" src="https://dummyimage.com/60x60/effaf7/0f665c&text=P1" alt="patient" />
+            <div>
+              <div style="font-weight:700">Meena R.</div>
+              <div class="small muted">Hyderabad</div>
+            </div>
+          </div>
+          <p class="small muted" style="margin-top:8px">Reduced my joint pain and helped me sleep better. The physician listens carefully and explains therapies clearly.</p>
+        </div>
+
+        <div class="testi-card">
+          <div style="display:flex;gap:8px;align-items:center">
+            <img class="thumb" src="https://dummyimage.com/60x60/effaf7/0f665c&text=P2" alt="patient" />
+            <div>
+              <div style="font-weight:700">Arjun S.</div>
+              <div class="small muted">Chennai</div>
+            </div>
+          </div>
+          <p class="small muted" style="margin-top:8px">Good herbal medicines — safe and natural. I saw improvement in 3 weeks.</p>
+        </div>
+
+        <div class="testi-card">
+          <div style="display:flex;gap:8px;align-items:center">
+            <img class="thumb" src="https://dummyimage.com/60x60/effaf7/0f665c&text=P3" alt="patient" />
+            <div>
+              <div style="font-weight:700">Lakshmi K.</div>
+              <div class="small muted">Coimbatore</div>
+            </div>
+          </div>
+          <p class="small muted" style="margin-top:8px">Excellent follow-up and diet guidance. Highly recommend.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title" style="margin:0 18px 10px;color:var(--brand)">Contact & Consultation</h2>
+    <div class="card" style="display:grid;grid-template-columns:1fr 320px;gap:14px">
+      <div>
+        <p class="muted">For appointments, product orders or general enquiries — fill the form and we will contact you. For urgent referrals call the clinic number.</p>
+
+        <form id="contactForm" onsubmit="submitContact(event)">
+          <label for="name">Full name</label>
+          <input id="name" required type="text" placeholder="Your full name" />
+
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com" />
+
+          <label for="phone">Phone</label>
+          <input id="phone" required type="tel" placeholder="10-digit phone" />
+
+          <label for="message">Message (symptoms / query)</label>
+          <textarea id="message" rows="4" placeholder="Brief description"></textarea>
+
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button class="primary" type="submit">Send Message</button>
+            <button type="button" onclick="prefillDemo()" style="background:#f3f6f5;border-radius:10px;border:1px solid #eef7f3;padding:10px">Demo</button>
+          </div>
+        </form>
+      </div>
+
+      <aside>
+        <div style="font-weight:700;color:var(--brand)">Clinic Details</div>
+        <div class="small muted" style="margin-top:8px">
+          Siddharth Siddha Clinic<br/>
+          21 Siddha Road, Chennai<br/>
+          Phone: <a href="tel:+911234567890">+91 12345 67890</a><br/>
+          Email: <a href="mailto:info@siddharthsiddha.example">info@siddharthsiddha.example</a>
+        </div>
+
+        <div style="margin-top:12px">
+          <div style="font-weight:700">Opening Hours</div>
+          <div class="small muted">Mon - Sat: 9:00 AM – 6:00 PM<br/>Sunday: Closed</div>
+        </div>
+
+        <div style="margin-top:12px">
+          <iframe title="map" src="https://maps.google.com/maps?q=Chennai&t=&z=13&ie=UTF8&iwloc=&output=embed" style="width:100%;height:160px;border:0;border-radius:8px"></iframe>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <footer>
+    <div class="small muted">© <span id="year"></span> Siddharth Siddha Medicine. All rights reserved.</div>
+    <div class="social">
+      <a href="#" aria-label="Facebook">FB</a>
+      <a href="#" aria-label="Instagram">IG</a>
+      <a href="#" aria-label="WhatsApp">WA</a>
+    </div>
+  </footer>
+
+  <script>
+    // Basic dynamic behavior: product list, cart, forms
+
+    const products = [
+      { id:0, title:"Chyavanapriya Syrup (200ml)", desc:"Immunity tonic", price:150, img:"https://dummyimage.com/600x400/fff8f0/0f665c&text=Chyavana" },
+      { id:1, title:"Brahmi Capsules (60 caps)", desc:"Cognitive support", price:220, img:"https://dummyimage.com/600x400/fff8f0/0f665c&text=Brahmi" },
+      { id:2, title:"Joint Care Oil (100ml)", desc:"Pain relief massage oil", price:180, img:"https://dummyimage.com/600x400/fff8f0/0f665c&text=Oil" },
+      { id:3, title:"Digestive Powder (100g)", desc:"Improves digestion", price:130, img:"https://dummyimage.com/600x400/fff8f0/0f665c&text=Digest" }
+    ];
+
+    // Render products
+    const productList = document.getElementById('productList');
+    productList.innerHTML = '';
+    products.forEach((p,idx)=>{
+      const el = document.createElement('div');
+      el.className = 'product';
+      el.innerHTML = `
+        <img loading="lazy" src="${p.img}" alt="${p.title}">
+        <h4>${p.title}</h4>
+        <div class="small muted">${p.desc}</div>
+        <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
+          <div class="price">₹${p.price}</div>
+          <div>
+            <button onclick="addToCart(${p.id})" style="padding:8px 10px;border-radius:8px;border:none;cursor:pointer;background:var(--brand);color:#fff;font-weight:700">Add</button>
+          </div>
+        </div>
+      `;
+      productList.appendChild(el);
+    });
+
+    // Simple cart using local state (not persisted)
+    let cart = [];
+    function addToCart(id){
+      const prod = products.find(p=>p.id===id);
+      if(!prod) return;
+      const existing = cart.find(c=>c.id===id);
+      if(existing) existing.qty++;
+      else cart.push({ ...prod, qty:1 });
+      renderCart();
+    }
+
+    function renderCart(){
+      const cDiv = document.getElementById('cartItems');
+      const count = cart.reduce((s,i)=>s+i.qty,0);
+      document.getElementById('cartCount').textContent = count;
+      if(cart.length===0){
+        cDiv.innerHTML = '<div class="small muted">No items yet.</div>';
+        return;
+      }
+      cDiv.innerHTML = '';
+      cart.forEach((c,idx)=>{
+        const row = document.createElement('div');
+        row.style.display='flex';
+        row.style.justifyContent='space-between';
+        row.style.alignItems='center';
+        row.style.padding='8px 0';
+        row.innerHTML = `
+          <div style="display:flex;gap:8px;align-items:center">
+            <img src="${c.img}" alt="" style="width:48px;height:48px;object-fit:cover;border-radius:8px">
+            <div>
+              <div style="font-weight:700">${c.title}</div>
+              <div class="small muted">₹${c.price} × ${c.qty}</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:6px;align-items:center">
+            <button onclick="changeQty(${idx},-1)" style="padding:6px;border-radius:8px">-</button>
+            <button onclick="changeQty(${idx},1)" style="padding:6px;border-radius:8px">+</button>
+            <button onclick="removeItem(${idx})" style="padding:6px;border-radius:8px;background:#fff;border:1px solid #eee">x</button>
+          </div>
+        `;
+        cDiv.appendChild(row);
+      });
+
+      // subtotal
+      const subtotal = cart.reduce((s,i)=>s + i.price*i.qty,0);
+      const totalRow = document.createElement('div');
+      totalRow.style.marginTop = '10px';
+      totalRow.style.display = 'flex';
+      totalRow.style.justifyContent = 'space-between';
+      totalRow.style.fontWeight = '700';
+      totalRow.innerHTML = `<div>Subtotal</div><div>₹${subtotal}</div>`;
+      cDiv.appendChild(totalRow);
+    }
+
+    function changeQty(idx, delta){
+      cart[idx].qty += delta;
+      if(cart[idx].qty <= 0) cart.splice(idx,1);
+      renderCart();
+    }
+    function removeItem(idx){ cart.splice(idx,1); renderCart(); }
+    function clearCart(){ cart = []; renderCart(); }
+
+    function checkout(){
+      if(cart.length===0){ alert('Cart is empty.'); return; }
+      const subtotal = cart.reduce((s,i)=>s + i.price*i.qty,0);
+      alert('Checkout — Total: ₹' + subtotal + '\n(This is a demo — implement payment or backend to complete.)');
+      clearCart();
+    }
+
+    // Forms: quick appointment and contact — these just simulate submission
+    function submitAppointment(e){
+      e.preventDefault();
+      const name = document.getElementById('qname').value.trim();
+      const phone = document.getElementById('qphone').value.trim();
+      const date = document.getElementById('qdate').value;
+      if(!/^\d{10}$/.test(phone)){ alert('Please enter a valid 10-digit phone.'); return; }
+      alert(`Thanks ${name}! Appointment request received for ${date}. We will call to confirm.`);
+      e.target.reset();
+    }
+
+    function submitContact(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      if(!/^\d{10}$/.test(phone)){ alert('Please enter a valid 10-digit phone.'); return; }
+      alert('Thank you! We have received your message. Our team will contact you shortly.');
+      e.target.reset();
+    }
+
+    function prefillDemo(){
+      document.getElementById('name').value = 'S. Kumar';
+      document.getElementById('email').value = 'demo@example.com';
+      document.getElementById('phone').value = '9876543210';
+      document.getElementById('message').value = 'I have chronic acidity and want a consultation.';
+    }
+
+    // small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Accessibility: keyboard focus for quick actions
+    document.addEventListener('keydown', e=>{
+      if(e.key.toLowerCase()==='c' && (e.ctrlKey||e.metaKey)){
+        e.preventDefault();
+        window.location.href = '#contact';
+      }
+    });
+
+    // initial render
+    renderCart();
+  </script>
+</body>
+</html>
